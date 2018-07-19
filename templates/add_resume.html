@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends "navbar.html"%}
+{% block content %}
+<div class="container text-right">
+    <form action="{{url_for('add_resume')}}" method="POST" enctype="multipart/form-data">
+        <div class="panel panel-default text-right">
+            <div class="panel-body" style="background-color:#E0E0E0">
+                <div class="form-group">
+                    <label >:نام</label>
+                    <textarea class="form-control my-2 text-right" rows="2" name="fname"></textarea>
+                </div>
+                <div class="form-group">
+                    <label >:نام خانوادگی</label>
+                    <textarea class="form-control my-2 text-right" rows="2" name="lname"></textarea>
+                </div>
+                <div class="form-group">
+                    <label >:تحصیلات</label>
+                    <textarea class="form-control my-2 text-right" rows="5" name="education"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label >:توانمندی ها</label>
+                    <textarea class="form-control my-2 text-right" rows="5" name="skill"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label >:تصویر دانشجو</label>
+                    <input type="file" id="picture" name="picture">
+                </div>
+
+                <div class="form-group">
+                    <label >:فایل رزومه</label>
+                    <input type="file" id="document" name="document">
+                </div>
+
+                <button class="btn btn-info" type="submit">تایید</button>
+
+                <div class="text-center">
+                    {% if error %}
+                        {{ error }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

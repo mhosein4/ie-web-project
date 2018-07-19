@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends "navbar.html"%}
+{% block content %}
+<div class="container text-right">
+    <form action="{{url_for('edit_resume', id = resume.id)}}" method="POST" enctype="multipart/form-data">
+        <div class="panel panel-default text-right">
+            <div class="panel-body" style="background-color:#E0E0E0">
+                <div class="form-group">
+                    <label>:تحصیلات</label>
+                    <textarea class="form-control my-2 text-right" rows="5" name="education">{{resume.education}}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label >:توانمندی ها</label>
+                    <textarea class="form-control my-2 text-right" rows="5" name="skill">{{resume.skill}}</textarea>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label >تصویر دانشجو</label>
+                    <a href="{{ url_for('static' , filename = 'uploads/' + resume.document)}}">{{ resume.picture }}</a>
+                    <input type="file" id="picture" name="picture">
+                </div> -->
+
+                <div class="form-group">
+                    <label >:فایل رزومه</label>
+                    <!-- <a href="{{ url_for('static' , filename = 'uploads/' + resume.document)}}">{{ resume.document }}</a> -->
+                    <input type="file" id="document" name="document">
+                </div>
+
+                <button class="btn btn-info" type="submit">تایید</button>
+
+                <div class="text-center">
+                    {% if error %}
+                        {{ error }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

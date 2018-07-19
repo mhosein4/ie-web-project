@@ -1,0 +1,21 @@
+{% extends "navbar.html"%}
+{% block content %}
+<div class="container">
+  <div class="row">
+    {% for item in resume %}
+    <div class="col-xs-3">
+      <div class="border px-0 rounded bg-light">
+        <img src="{{url_for('static', filename='uploads/' + item.picture)}}" alt="" style="width:100%" class="w3-hover-opacity rounded">
+        <div class="text-right mx-2">
+          <br>
+          <p><b>{{ item.user.username }}</b></p>
+          <p>{{ item.education }}</p>
+          <a class="text-primary" href="{{url_for('resume_detail', id = item.id)}}">بیشتر</a>
+        </div>
+        <br>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

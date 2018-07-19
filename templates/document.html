@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "navbar.html"%}
+{% block content %}
+<div class="container">
+    <div class="panel panel-default text-right">
+        <div class="panel-body" style="background-color:#EEEEEE">
+            <p class="h2 text-center">به نام خدا</p>
+            <br>
+            <p class="h4 text-center">سید محمد حسین طباطبائی</p>
+            <br>
+            <br>
+            <a class="text-primary h4" href="{{ url_for('static' , filename = 'uploads/document.pdf')}}">
+                <p style="text-align:center">document.pdf
+            </a>
+    </div>
+</div>
+{% endblock %}
